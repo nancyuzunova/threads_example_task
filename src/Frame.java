@@ -1,6 +1,6 @@
-public class Frame extends Thread {
-    @Override
-    public void run() {
+public class Frame{
+
+    public void constructFrame(){
         try {
             System.out.println("Start building a frame!");
             Thread.sleep(5000);

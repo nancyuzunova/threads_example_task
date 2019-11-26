@@ -1,6 +1,6 @@
-public class Engine extends Thread {
-    @Override
-    public void run() {
+public class Engine{
+
+    public void constructEngine(){
         try {
             System.out.println("Start building engine!");
             Thread.sleep(7000);

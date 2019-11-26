@@ -1,6 +1,3 @@
-import java.sql.Time;
-import java.time.LocalDateTime;
-
 public class Demo {
 
     public static void main(String[] args) {
@@ -8,42 +5,22 @@ public class Demo {
         long timeStart = System.currentTimeMillis();
         Thread line1 = new Thread(()->{
             Engine engine = new Engine();
-            engine.start();
+            engine.constructEngine();
             Frame frame = new Frame();
-            try {
-                engine.join();
-            } catch (InterruptedException e) {
-                System.out.println("oops");
-            }
-            frame.start();
+            frame.constructFrame();
         });
         Thread line2 = new Thread(()->{
             for (int i = 0; i < 4; i++) {
                 Seat seat = new Seat();
-                seat.start();
-                try {
-                    seat.join();
-                } catch (InterruptedException e) {
-                    System.out.println("oops");
-                }
+                seat.constructSeat();
             }
         });
         Thread line3 = new Thread(()->{
             Seat seat = new Seat();
-            seat.start();
-            try {
-                seat.join();
-            } catch (InterruptedException e) {
-                System.out.println("oops");
-            }
+            seat.constructSeat();
             for (int i = 0; i < 4; i++) {
                 Tire tire = new Tire();
-                tire.start();
-                try {
-                    tire.join();
-                } catch (InterruptedException e) {
-                    System.out.println("oops");
-                }
+                tire.constructTire();
             }
         });
         line1.start();

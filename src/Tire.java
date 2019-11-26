@@ -1,6 +1,6 @@
-public class Tire extends Thread {
-    @Override
-    public void run() {
+public class Tire {
+
+    public void constructTire(){
         try {
             System.out.println("Start building a tire!");
             Thread.sleep(2000);

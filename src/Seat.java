@@ -1,6 +1,6 @@
-public class Seat extends Thread {
-    @Override
-    public void run() {
+public class Seat {
+
+    public void constructSeat(){
         try {
             System.out.println("Start building a seat!");
             Thread.sleep(3000);
